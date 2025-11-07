@@ -1,7 +1,7 @@
 
 import { useLanguage } from '../context/LanguageContext';
-import { Mail, Phone, Linkedin, Github, FileText } from 'lucide-react'; // Using lucide-react for icons
-import WhatsAppIcon from './WhatsAppIcon';
+import { Mail, Phone, FileText } from 'lucide-react'; // Using lucide-react for icons
+import { SiLinkedin, SiGithub, SiWhatsapp } from 'react-icons/si';
 
 const Header = () => {
   const { personalInfo } = useLanguage();
@@ -28,22 +28,25 @@ const Header = () => {
             <Phone className="mr-2 h-5 w-5" />
             <span>Llamar</span>
           </a>
-          <a href={`https://wa.me/${personalInfo.contact.phone}`} target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-green-600 dark:hover:text-green-400">
-            <WhatsAppIcon className="mr-2 h-5 w-5" />
-            <span>Mensaje</span>
-          </a>
         </div>
       </div>
       <div className="mt-2 flex justify-center space-x-6 text-gray-600 dark:text-gray-400">
         <a href={`https://www.${personalInfo.contact.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-600 dark:hover:text-blue-400">
-          <Linkedin className="mr-2 h-5 w-5" />
+          <SiLinkedin className="mr-2 h-5 w-5" />
           <span>{personalInfo.contact.linkedin}</span>
         </a>
+        <a href={`https://wa.me/${personalInfo.contact.phone}`} target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-green-600 dark:hover:text-green-400">
+          <SiWhatsapp className="mr-2 h-5 w-5" />
+          <span>Mensaje</span>
+        </a>
+      </div>
+      <div className="mt-2 flex justify-center space-x-6 text-gray-600 dark:text-gray-400">
         <a href={`https://www.${personalInfo.contact.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-600 dark:hover:text-blue-400">
-          <Github className="mr-2 h-5 w-5" />
+          <SiGithub className="mr-2 h-5 w-5" />
           <span>{personalInfo.contact.github}</span>
         </a>
       </div>
+
     </section>
   );
 };
