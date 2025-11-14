@@ -1,7 +1,7 @@
 
 export const cvData = {
   personalInfo: {
-    name: "Ariel Raúl Tecay",
+    name: "Ariel Raúl Tecay 2",
     title: {
       es: "Desarrollador Full-Stack",
       en: "Full-Stack Developer"
